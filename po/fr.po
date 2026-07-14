@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-03-15 10:09+0000\n"
-"Last-Translator: Norbert V <norbert@vassy.com>\n"
+"PO-Revision-Date: 2026-07-15 02:14+0000\n"
+"Last-Translator: Christophe Jaillet <christophe.jaillet@wanadoo.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: data/io.missioncenter.MissionCenter.desktop.in:2
 #: data/io.missioncenter.MissionCenter.metainfo.xml.in:4
@@ -487,7 +487,6 @@ msgstr "Changer le _graphe pour"
 #: resources/ui/performance_page/cpu.blp:194
 #: resources/ui/performance_page/gpu.blp:219
 #: resources/ui/performance_page/gpu.blp:253
-#, fuzzy
 msgid "_Power Draw"
 msgstr "Consommation électrique"
 
@@ -989,7 +988,7 @@ msgstr "WWN :"
 
 #: resources/ui/performance_page/disk_details.blp:338
 msgid "Serial:"
-msgstr "Serial :"
+msgstr "N° de série :"
 
 #: resources/ui/performance_page/disk_details.blp:357
 msgid "Rotation Rate"
@@ -1061,7 +1060,7 @@ msgstr "Governor Cpufreq :"
 
 #: resources/ui/performance_page/cpu_details.blp:401
 msgid "Power preference:"
-msgstr "_Préférences de consommation d'énergie :"
+msgstr "Préférences de consommation d'énergie :"
 
 #: resources/ui/preferences/apps_services_page.blp:25
 #, fuzzy
@@ -2340,11 +2339,11 @@ msgstr[0] "{} minute"
 msgstr[1] "{} minutes"
 
 #: src/main.rs:126 src/main.rs:205
-#, fuzzy, rust-format
+#, rust-format
 msgid "{} second"
 msgid_plural "{} seconds"
-msgstr[0] "{} seconde{}"
-msgstr[1] "{} seconde{}"
+msgstr[0] "{} seconde"
+msgstr[1] "{} secondes"
 
 #: src/main.rs:163
 #, rust-format
