@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-07-14 07:01+0000\n"
+"PO-Revision-Date: 2026-07-17 03:01+0000\n"
 "Last-Translator: jonnysemon <jonnysemon@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/ar/>\n"
@@ -797,14 +797,12 @@ msgid "Powered On:"
 msgstr "مُشغّل"
 
 #: resources/ui/performance_page/disk_smart_data_dialog.blp:81
-#, fuzzy
 msgid "Drive Health:"
-msgstr "صحة القرص"
+msgstr "صحة القرص:"
 
 #: resources/ui/performance_page/disk_smart_data_dialog.blp:93
-#, fuzzy
 msgid "SMART Test Status:"
-msgstr "حالة اختبار SMART"
+msgstr "حالة اختبار SMART:"
 
 #: resources/ui/performance_page/disk_smart_data_dialog.blp:108
 #: resources/ui/performance_page/disk_smart_data_dialog.blp:133
@@ -968,7 +966,7 @@ msgstr "معدّل الدوران"
 
 #: resources/ui/performance_page/disk_details.blp:478
 msgid "Partitions"
-msgstr ""
+msgstr "الأقسام"
 
 #: resources/ui/performance_page/cpu_details.blp:72
 msgid "Speed"
@@ -1035,9 +1033,8 @@ msgid "Power preference:"
 msgstr "تفضيل الطاقة:"
 
 #: resources/ui/preferences/apps_services_page.blp:25
-#, fuzzy
 msgid "Apps & Services"
-msgstr "التطبيقات وصفحات الخدمات"
+msgstr "التطبيقات والخدمات"
 
 #: resources/ui/preferences/apps_services_page.blp:30
 msgid "Merge Process Stats"
@@ -2014,14 +2011,12 @@ msgid "No"
 msgstr "لا"
 
 #: src/performance_page/cpu.rs:1034 src/performance_page/gpu.rs:1122
-#, fuzzy
 msgid "Power draw over "
-msgstr "استهلاك الطاقة"
+msgstr "استهلاك الطاقة فوق "
 
 #: src/performance_page/cpu.rs:1037 src/performance_page/gpu.rs:1125
-#, fuzzy
 msgid "Clock speed over "
-msgstr "سرعة المروحة فوق "
+msgstr "سرعة الساعة فوق "
 
 #: src/performance_page/disk.rs:179
 #, rust-format
@@ -2135,16 +2130,16 @@ msgstr "{} {} ({})"
 #: src/performance_page/mod.rs:1724 src/performance_page/mod.rs:2626
 #, rust-format
 msgid "Battery {}"
-msgstr ""
+msgstr "البطارية {}"
 
 #: src/performance_page/mod.rs:1726 src/performance_page/mod.rs:2628
 msgid "Battery"
-msgstr ""
+msgstr "البطارية"
 
 #: src/performance_page/mod.rs:2391
-#, fuzzy, rust-format
+#, rust-format
 msgid "{}"
-msgstr "{}%"
+msgstr "{}"
 
 #: src/performance_page/mod.rs:2408 src/performance_page/mod.rs:2409
 #, rust-format
@@ -2159,39 +2154,35 @@ msgstr "فشلت"
 
 #: src/performance_page/network.rs:458
 msgid "Disconnected"
-msgstr ""
+msgstr "مفصول"
 
 #: src/performance_page/network.rs:459
 msgid "Disconnecting"
-msgstr ""
+msgstr "يفصل"
 
 #: src/performance_page/network.rs:460
-#, fuzzy
 msgid "Connected"
-msgstr "نوع الاتصال:"
+msgstr "متصل"
 
 #: src/performance_page/network.rs:461
-#, fuzzy
 msgid "Connecting"
-msgstr "نوع الاتصال:"
+msgstr "يتصل"
 
 #: src/performance_page/network.rs:462
 msgid "Configuring"
-msgstr ""
+msgstr "يضبط"
 
 #: src/performance_page/network.rs:463
 msgid "Waiting for auth"
-msgstr ""
+msgstr "ينتظر الاستيثاق"
 
 #: src/performance_page/network.rs:464
-#, fuzzy
 msgid "Unavailable"
-msgstr "متاح"
+msgstr "غير متوفر"
 
 #: src/performance_page/network.rs:465
-#, fuzzy
 msgid "Loading"
-msgstr "جارِ التحميل..."
+msgstr "يحمل"
 
 #: src/services_page/mod.rs:99
 #, rust-format
