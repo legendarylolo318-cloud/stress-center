@@ -716,7 +716,6 @@ mod imp {
             self.filter.replace(filter.clone());
 
             let model = gtk::FilterListModel::new(Some(tree_list_model), Some(filter));
-            model.set_incremental(true);
             model
         }
 
@@ -765,7 +764,6 @@ mod imp {
             let tree_list_sorter = gtk::TreeListRowSorter::new(column_view_sorter);
             let model =
                 gtk::SortListModel::new(Some(filter_list_model), Some(tree_list_sorter.clone()));
-            model.set_incremental(true);
             (model, tree_list_sorter)
         }
 

@@ -258,16 +258,6 @@ impl AppsPage {
                     };
                     let imp = this.imp();
 
-                    let filter_list_model = imp.table_view.imp().filter_list_model.borrow();
-                    if let Some(flm) = filter_list_model.as_ref() {
-                        flm.set_incremental(false);
-                    }
-
-                    let sort_list_model = imp.table_view.imp().sort_list_model.borrow();
-                    if let Some(slm) = sort_list_model.as_ref() {
-                        slm.set_incremental(false);
-                    }
-
                     imp.content_stack.set_visible_child_name("content");
                 }
             });
