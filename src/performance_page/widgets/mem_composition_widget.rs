@@ -188,6 +188,7 @@ mod imp {
         }
 
         fn render(&self, snapshot: &Snapshot, width: f32, height: f32, scale_factor: f64) {
+            #[allow(deprecated)]
             let texture = gdk::Texture::for_pixbuf(
                 &self.generate_pattern(scale_factor as f32, self.base_color.get()),
             );

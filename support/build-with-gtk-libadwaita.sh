@@ -32,7 +32,7 @@ mkdir -p "$OUT_PATH" && cd "$OUT_PATH"
 
 # https://www.linuxfromscratch.org/blfs/view/stable/general/glib2.html
 # --------------------------------------------------------------------
-GLIB_VER=2.87.5
+GLIB_VER=2.88.2
 GLIB_VER_MM=$(echo $GLIB_VER | cut -f1-2 -d'.')
 # --------------------------------------------------------------------
 rm -rf /usr/include/glib-2.0/
