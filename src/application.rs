@@ -526,51 +526,79 @@ impl MissionCenterApplication {
             .website("https://missioncenter.io")
             .release_notes(r#"<p>Noteworthy changes:</p>
 <ul>
-<li>Overhaul Services Page to include viewing child processes, user services, filtering on status, and a more efficient backend</li>
-<li>Add an About System dialog that can be accessed from the context menu</li>
+<li>Add a new Battery page to the Performance tab, with charge graphs and detailed battery information (@jlo62)</li>
+<li>Show per-partition usage details on the disk page, including used and free space (@jojo2357)</li>
+<li>Overhaul the graphing backend: smoother animations and rendering, a new loading shimmer while data loads, and less stuttering on application startup (@jojo2357, @kicsyromy)</li>
+<li>Improve application detection, fixing wrong names and icons, phantom entries for PWAs, and constantly cycling processes (@kicsyromy)</li>
+<li>Improvements to the Snap package, which was upgraded to the core24 snap (@kicsyromy)</li>
+<li>Improvements to the AppImage package which now uses quick-sharun, is smaller and no longer depends on FUSE (@kicsyromy)</li>
 </ul>
 <p>Minor features:</p>
 <ul>
-<li>Update to GNOME 49 Platform</li>
-<li>Show CPU power Draw</li>
-<li>Add ability to send various OS signals to processes</li>
+<li>Add a second CPU graph that can show temperature, power draw or CPU frequency (@jlo62)</li>
+<li>Add memory compression (zRAM/zswap) statistics to the Memory page (@timatgca)</li>
+<li>Refactor and redesign the Preferences dialog (@kicsyromy)</li>
+<li>Allow disabling entire device categories and individual network types (@kicsyromy)</li>
+<li>Update to GNOME 50 Platform (@kicsyromy)</li>
+<li>Pause UI refreshes by holding the CTRL key, just like the Windows Task Manager (@jlo62)</li>
+<li>More accurate per-process memory usage using a hybrid PSS approximation (@kicsyromy)</li>
+<li>Show per-process swap usage instead of shared memory in the Apps page (@jlo62)</li>
+<li>Allow sending process signals that require elevation via `pkexec` (@jojo2357)</li>
+<li>Add an option to select what the middle GPU graph displays (@jlo62)</li>
+<li>Add a first run dialog and setup script for advanced features (@jlo62)</li>
+<li>Add `--app-id`/`-a` command-line flag for setting custom application IDs (@kicsyromy)</li>
+<li>Collapse and expand rows using double-click or the left and right arrow keys (@jojo2357)</li>
+<li>Display the network connection state in the network details sidebar (@jojo2357)</li>
+<li>Show total GPU memory on the graph when GTT is not available (@jlo62)</li>
+<li>Add an option to gray out zero values in the Apps page (@jlo62)</li>
+<li>Enhance the About System dialog with more information and better copy functionality (@jlo62)</li>
+<li>Add and rebind keyboard shortcuts, including Alt+1/2/3 for switching pages and F9 for toggling the sidebar (@jlo62)</li>
+<li>Add a visual indicator when CPU speed falls back to BogoMIPS (@bleys1)</li>
+<li>Move icon extraction to backend to improve portability and remote monitoring (@jojo2357)</li>
 </ul>
 <p>Bug fixes:</p>
 <ul>
-<li>Ignore SMART temps of 0 Kelvin</li>
-<li>Improve fans configuration</li>
-<li>Reduce label formatter overhead</li>
-<li>For GPUs, fix reading of max_link_{width,speed} and make reading current values more robust</li>
-<li>Fix MemoryCompositionWidget tooltip offset</li>
-<li>Reduce CPU usage when fetching and updating data</li>
+<li>Fix pahntom CPU usage spikes when the system is idle (@kicsyromy)</li>
+<li>Fix L3 and L4 cache sizes on CPUs with SNC-like topologies (@kicsyromy)</li>
+<li>Treat ZFS ARC as free memory (@kicsyromy)</li>
+<li>Fix blurry application icons on HiDPI displays (@kicsyromy)</li>
+<li>Fix the SMART dialog so that it properly adapts to narrow widths (@kicsyromy)</li>
+<li>Detect drives becoming ejectable at runtime (@jojo2357)</li>
+<li>Fix a race condition in the Apps page (@jojo2357)</li>
+<li>Fix graphing inconsistency on the disk page (@jojo2357)</li>
+<li>Read CPU temperatures from the hwmon directory used by the SteamDeck (@jlo62)</li>
 </ul>
 <p>Translation updates</p>
 <ul>
-<li>Arabic by jonnysemon</li>
-<li>Basque by Ibai Oihanguren Sala</li>
-<li>Belarusian by Yahor, teacond</li>
-<li>Chinese (Simplified Han script) by flywater</li>
-<li>Czech by Fjuro, erindesu, orangesunny, pavelbo</li>
-<li>Dutch by philip.goto, Klinton_</li>
-<li>Estonian by IndrekHaav</li>
-<li>Finnish by artnay</li>
-<li>French by Norbert V</li>
-<li>Galician by Espasant3</li>
-<li>German by Gian Veronese, Real Tehreal, dbstf</li>
-<li>Hebrew by yarons</li>
-<li>Hungarian by therealmate, KAMI911</li>
-<li>Italian by FrecceNere, Kryotek, amivaleo</li>
-<li>Irish by aindriu80</li>
-<li>Japanese by shryt0206, rainy_sunset</li>
-<li>Norwegian Bokmål by Telaneo</li>
-<li>Polish by keloH, Real_Microwave, Cool guy</li>
-<li>Portuguese by Raphael Campos, SantosSi</li>
-<li>Portuguese (Brazil) by Raphael Campos, danick8989, flyrio</li>
-<li>Russian by teacond</li>
-<li>Spanish by nolddor, BrYellow, maxdesigna7x</li>
-<li>Tamil by tace16</li>
-<li>Turkish by yigitalcks, yakushabb</li>
-<li>Ukrainian by Ethermidate</li>
+<li>Basque Ibai Oihanguren Sala</li>
+<li>Bulgarian Alexander Stoilov</li>
+<li>Catalan Xusi Fons Jaime Muñoz Martín</li>
+<li>Chinese (Traditional Han script) Kisaragi Hiu 默想刃Mokuso YB</li>
+<li>Chinese (Simplified Han script) lumingzh</li>
+<li>Czech Pavel Borecki</li>
+<li>Dutch Luc van der Werf</li>
+<li>Finnish Henri Koivuranta Jiri Grönroos veiskiboi</li>
+<li>French Norbert V Nota Inutilis ziyad arif Christophe Jaillet</li>
+<li>Georgian Temuri Doghonadze</li>
+<li>German Aircraft192 anon</li>
+<li>Indonesian Arif Budiman</li>
+<li>Irish Aindriú Mac Giolla Eoin</li>
+<li>Italian Pierfrancesco Passerini</li>
+<li>Kabyle ButterflyOfFire</li>
+<li>Korean murllock329</li>
+<li>Norwegian Bokmål ovl-1 Telaneo</li>
+<li>Occitan Quentin PAGÈS</li>
+<li>Polish NooB9496</li>
+<li>Portuguese Hugo Carvalho Jonathan Teixeira</li>
+<li>Portuguese (Brazil) Rafael Henrique Rubens Stuginski Jr</li>
+<li>Russian Anatoly Bogomolov Maxim</li>
+<li>Serbian Марко М. Костић</li>
+<li>Spanish Xusi Fons</li>
+<li>Swedish Game Nobz Jonas Viktor Engkvist</li>
+<li>Tamil தமிழ்நேரம்</li>
+<li>Turkish İsmail POLAT Sabri Ünal</li>
+<li>Ukrainian anonymous Димко</li>
+<li>Vietnamese lebao3105 Loc Huynh</li>
 </ul>"#)
             .build();
 

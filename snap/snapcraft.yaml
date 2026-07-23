@@ -1,6 +1,6 @@
 name: mission-center
 base: core24
-version: '1.1.0'
+version: '1.2.0'
 summary: Monitor your CPU, Memory, Disk, Network and GPU usage
 description: |
   Features:
