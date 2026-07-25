@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-07-24 02:01+0000\n"
+"PO-Revision-Date: 2026-07-26 13:01+0000\n"
 "Last-Translator: Doyoung Park <doyoungp.00@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/ko/>\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: data/io.missioncenter.MissionCenter.metainfo.xml.in:24
 msgid "Monitor RAM and Swap usage"
-msgstr "RAM 과 스왑 이용률을 감시합니다"
+msgstr "RAM과 스왑 이용률을 감시합니다"
 
 #: data/io.missioncenter.MissionCenter.metainfo.xml.in:25
 msgid "See a breakdown how the memory is being used by the system"
@@ -175,7 +175,7 @@ msgstr "데이터를 새로 고치고 인터페이스를 업데이트하는 속�
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:70
 msgid "How many points should be displayed on each chart?"
-msgstr "각 차트별로 표시할 점의 갯수는 얼마나 됩니까?"
+msgstr "차트별로 표시할 점의 갯수"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:75
 msgid "Whether or not to use bits or bytes (default) for memory"
@@ -217,11 +217,11 @@ msgstr ""
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:115
 msgid "Column sorting is persisted across app restarts"
-msgstr "열 정렬 상태는 앱을 다시 시작해도 그대로 유지합니다"
+msgstr "앱을 다시 시작해도 열 정렬 상태 유지"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:120
 msgid "Column order is persisted across app restarts"
-msgstr "열 순서는 앱을 다시 시작해도 그대로 유지합니다"
+msgstr "앱을 다시 시작해도 열 순서 유지"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:125
 msgid ""
