@@ -14,8 +14,7 @@ Monitor your CPU, Memory, Disk, Network and GPU usage with [Mission Center](http
 * See a breakdown how the memory is being used by the system
 * Monitor Disk utilization and transfer rates
 * Monitor network utilization and transfer speeds
-* See network interface information such as network card name, connection type (Wi-Fi or Ethernet), wireless speeds
-  and
+* See network interface information such as network card name, connection type (Wi-Fi or Ethernet), wireless speeds and
   frequency, hardware address, IP address
 * Monitor overall GPU usage, video encoder and decoder usage, memory usage and power consumption, powered by the popular
   NVTOP project
@@ -36,13 +35,13 @@ Please note there is ongoing work to overcome all of these.
 * When using Linux Mint/Cinnamon, launched applications may not show up in the "Applications" section. (Upstream
   issue: https://github.com/linuxmint/cinnamon/issues/12015)
 
-Please also note that as Mission Center is a libadwaita application, it will not follow system-defined stylesheets (
-themes).
+Please also note that as Mission Center is a libadwaita application, it will not follow system-defined stylesheets
+(themes).
 
 ## Installing
 
-[AppImage (x86_64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/12045090460/artifacts/raw/MissionCenter_v1.1.0-x86_64.AppImage)  
-[AppImage (ARM64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/12045090469/artifacts/raw/MissionCenter_v1.1.0-aarch64.AppImage)  
+[AppImage (x86_64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/15536631699/artifacts/raw/MissionCenter-1.2.0-x86_64.AppImage)  
+[AppImage (ARM64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/15536631700/artifacts/raw/MissionCenter-1.2.0-aarch64.AppImage)  
 [Flatpak](https://flathub.org/apps/io.missioncenter.MissionCenter)  
 [Snap](https://snapcraft.io/mission-center)
 
@@ -114,20 +113,20 @@ Source code is available at [GitLab](https://gitlab.com/mission-center-devs/miss
 | DRM development libraries    |                            |             N/A |
 | GBM development libraries    |                            |             N/A |
 | udev development libraries   |                            |             N/A |
-| GTK 4                        |                            |            4.20 |
-| libadwaita                   |                            |             1.8 |
+| GTK 4                        |                            |            4.22 |
+| libadwaita                   |                            |             1.9 |
 
 **Build instructions**
 
-Note: A native build requires, at least, GTK 4.20 and libadwaita 1.8. That means ArchLinux >= 20251001, Fedora >= 43,
-Ubuntu >= 25.10.
+Note: A native build requires, at least, GTK 4.22 and libadwaita 1.9. That means ArchLinux >= 20260501, Fedora >= 44,
+Ubuntu >= 26.04.
 
 ```bash
 # Avoid using "--depth=1" flag as it will not include the submodules which will result in failed build
 git clone https://gitlab.com/mission-center-devs/mission-center --recursive
 cd mission-center
 
-# On Ubuntu 25.10 all dependencies, except for the Rust toolchain, can be installed with:
+# On Ubuntu 26.04 all dependencies, except for the Rust toolchain, can be installed with:
 sudo apt install build-essential cmake curl desktop-file-utils gettext git libadwaita-1-dev libdbus-1-dev libdrm-dev libgbm-dev libudev-dev meson pkg-config protobuf-compiler python3-gi python3-pip
 
 BUILD_ROOT="$(pwd)/build-meson-debug"
@@ -167,8 +166,11 @@ missioncenter
 
 ### Building - AppImage
 
+**Note:** Creating a fully distro-agnostic AppImage requires an running the `support/create-appimage.sh` script in an
+ArchLinux container. The process described here is just informative.
+
 ```bash
-# On Ubuntu 25.10 all dependencies, except for the Rust toolchain, can be installed with:
+# On Ubuntu 26.04 all dependencies, except for the Rust toolchain, can be installed with:
 sudo apt install build-essential cmake curl desktop-file-utils gettext git libadwaita-1-dev libdbus-1-dev libdrm-dev libgbm-dev libudev-dev meson pkg-config protobuf-compiler python3-gi python3-pip
 
 meson setup _build -Dbuildtype=debug # Alternatively pass `-Dbuildtype=release` for a release build
@@ -208,8 +210,8 @@ Install the required Flatpak runtimes and SDKs:
 flatpak install -y \
     org.freedesktop.Platform//25.08 \
     org.freedesktop.Sdk//25.08 \
-    org.gnome.Platform//49 \
-    org.gnome.Sdk//49
+    org.gnome.Platform//50 \
+    org.gnome.Sdk//50
 ```
 
 Finally build a Flatpak package:
@@ -269,15 +271,12 @@ Comments, suggestions, bug reports and contributions are welcome.
 
 ## License
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation; either version 3 of the License, or (at your option) any later
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later
 version.
 
-Please see COPYING file in the root of this repository for the complete license
-text. Alternatively see
-[the official license](https://www.gnu.org/licenses/gpl-3.0.html) as written
-by the Free Software Foundation.
+Please see COPYING file in the root of this repository for the complete license text. Alternatively see
+[the official license](https://www.gnu.org/licenses/gpl-3.0.html) as written by the Free Software Foundation.
 
 ## Code of Conduct
 
