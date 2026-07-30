@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2025-09-30 09:01+0000\n"
-"Last-Translator: rainy_sunset "
-"<rainy_sunset@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-07-30 12:01+0000\n"
+"Last-Translator: \"Rinrin.rs\" <rinrin0413.valley@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/ja/>\n"
 "Language: ja\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: data/io.missioncenter.MissionCenter.desktop.in:2
 #: data/io.missioncenter.MissionCenter.metainfo.xml.in:4
@@ -427,7 +426,7 @@ msgstr "CPU"
 #: resources/ui/performance_page/cpu.blp:75
 #: resources/ui/performance_page/gpu.blp:73
 msgid "Utilization over "
-msgstr "直近{}秒間の使用率 "
+msgstr "直近の使用率: "
 
 #: resources/ui/performance_page/cpu.blp:90
 #: resources/ui/performance_page/gpu.blp:87
@@ -436,9 +435,8 @@ msgid "100%"
 msgstr "100%"
 
 #: resources/ui/performance_page/cpu.blp:167
-#, fuzzy
 msgid "Change _Top Graph To"
-msgstr "グラフの変更"
+msgstr "上部のグラフを変更(_T)"
 
 #: resources/ui/performance_page/cpu.blp:170
 msgid "Overall U_tilization"
@@ -449,43 +447,38 @@ msgid "Logical _Processors"
 msgstr "論理プロセッサ"
 
 #: resources/ui/performance_page/cpu.blp:180
-#, fuzzy
 msgid "_All Threads"
-msgstr "スレッド数"
+msgstr "すべてのスレッド(_A)"
 
 #: resources/ui/performance_page/cpu.blp:185
 msgid "All Threads _Stacked"
-msgstr ""
+msgstr "すべてのスレッド（積み上げ）(_S)"
 
 #: resources/ui/performance_page/cpu.blp:191
-#, fuzzy
 msgid "Change B_ottom Graph To"
-msgstr "グラフの変更"
+msgstr "下部のグラフを変更(_O)"
 
 #: resources/ui/performance_page/cpu.blp:194
 #: resources/ui/performance_page/gpu.blp:219
 #: resources/ui/performance_page/gpu.blp:253
-#, fuzzy
 msgid "_Power Draw"
-msgstr "消費電力"
+msgstr "消費電力(P)"
 
 #: resources/ui/performance_page/cpu.blp:199
 #: resources/ui/performance_page/gpu.blp:229
 #: resources/ui/performance_page/gpu.blp:263
-#, fuzzy
 msgid "_Temperature"
-msgstr "温度"
+msgstr "温度(_T)"
 
 #: resources/ui/performance_page/cpu.blp:204
-#, fuzzy
 msgid "_Clock Speed"
-msgstr "クロック速度"
+msgstr "クロック速度(C)"
 
 #: resources/ui/performance_page/cpu.blp:209
 #: resources/ui/performance_page/gpu.blp:234
 #: resources/ui/performance_page/gpu.blp:268
 msgid "_None"
-msgstr ""
+msgstr "なし(N)"
 
 #: resources/ui/performance_page/cpu.blp:215
 msgid "Show Kernel Times"
@@ -570,7 +563,7 @@ msgstr "ファン(_F)"
 #: resources/ui/performance_page/memory.blp:244
 #: resources/ui/performance_page/network.blp:142
 msgid "_Battery"
-msgstr ""
+msgstr "バッテリ(B)"
 
 #: resources/ui/performance_page/cpu.blp:268
 #: resources/ui/performance_page/disk.blp:226
@@ -591,21 +584,21 @@ msgstr "ディスクを取り出す"
 
 #: resources/ui/performance_page/disk.blp:100
 msgid "Active time over "
-msgstr "アクティブな時間 "
+msgstr "直近のアクティブな時間: "
 
 #: resources/ui/performance_page/disk.blp:140
 #: resources/ui/performance_page/network.blp:62
 msgid "Throughput over "
-msgstr "スループット "
+msgstr "直近のスループット: "
 
 #: resources/ui/performance_page/fan.blp:62
 msgid "Fan speed over "
-msgstr "メモリ使用率 "
+msgstr "直近のファン速度: "
 
 #: resources/ui/performance_page/fan.blp:109 src/performance_page/cpu.rs:1040
 #: src/performance_page/gpu.rs:1128
 msgid "Temperature over "
-msgstr "温度 "
+msgstr "直近の温度: "
 
 #: resources/ui/performance_page/fan_details.blp:59
 msgid "Fan Speed"
@@ -621,40 +614,35 @@ msgstr "現在の温度"
 
 #: resources/ui/performance_page/gpu.blp:119 src/performance_page/gpu.rs:1111
 msgid "Video encode/decode utilization over "
-msgstr "ビデオエンコード "
+msgstr "直近のビデオエンコード/デコード使用率: "
 
 #: resources/ui/performance_page/gpu.blp:161
 #: resources/ui/performance_page/memory.blp:77 src/performance_page/gpu.rs:1118
 msgid "Memory usage over "
-msgstr "メモリ使用率 "
+msgstr "直近のメモリ使用率: "
 
 #: resources/ui/performance_page/gpu.blp:206
-#, fuzzy
 msgid "Change Middle Graph To"
-msgstr "グラフの変更"
+msgstr "中央のグラフを変更"
 
 #: resources/ui/performance_page/gpu.blp:209
 #: resources/ui/performance_page/gpu.blp:243
-#, fuzzy
 msgid "_Encode/_Decode"
-msgstr "エンコード/デコードの使用状況を表示"
+msgstr "エンコード/デコード(_E)"
 
 #: resources/ui/performance_page/gpu.blp:214
 #: resources/ui/performance_page/gpu.blp:248
-#, fuzzy
 msgid "_Memory Usage"
-msgstr "メモリ使用率"
+msgstr "メモリ使用率(M)"
 
 #: resources/ui/performance_page/gpu.blp:224
 #: resources/ui/performance_page/gpu.blp:258
-#, fuzzy
 msgid "_Clock Speeds"
-msgstr "クロック速度"
+msgstr "クロック速度(C)"
 
 #: resources/ui/performance_page/gpu.blp:240
-#, fuzzy
 msgid "Change Bottom Graph To"
-msgstr "グラフの変更"
+msgstr "下部のグラフを変更"
 
 #: resources/ui/performance_page/memory.blp:41
 #: resources/ui/table_view/table_view.blp:59
@@ -665,7 +653,7 @@ msgstr "メモリ"
 
 #: resources/ui/performance_page/memory.blp:123
 msgid "Swap usage over "
-msgstr "スワップ使用率 "
+msgstr "直近のスワップ使用率: "
 
 #: resources/ui/performance_page/memory.blp:171
 msgid "Memory composition"
@@ -705,11 +693,11 @@ msgstr "利用可能(スワップ)"
 
 #: resources/ui/performance_page/memory_details.blp:258
 msgid "Compressed"
-msgstr ""
+msgstr "圧縮済み"
 
 #: resources/ui/performance_page/memory_details.blp:290
 msgid "Savings"
-msgstr ""
+msgstr "削減量"
 
 #: resources/ui/performance_page/memory_details.blp:317
 msgid "Speed:"
@@ -742,11 +730,11 @@ msgstr "送信"
 
 #: resources/ui/performance_page/network_details.blp:132
 msgid "Total Received"
-msgstr "受信した総量"
+msgstr "総受信量"
 
 #: resources/ui/performance_page/network_details.blp:162
 msgid "Total Sent"
-msgstr "送信した総量"
+msgstr "総送信量"
 
 #: resources/ui/performance_page/network_details.blp:190
 msgid "Interface name:"
@@ -757,9 +745,8 @@ msgid "Connection type:"
 msgstr "接続の種類:"
 
 #: resources/ui/performance_page/network_details.blp:222
-#, fuzzy
 msgid "Connection status:"
-msgstr "接続の種類:"
+msgstr "接続状態:"
 
 #: resources/ui/performance_page/network_details.blp:240
 msgid "SSID:"
@@ -865,7 +852,6 @@ msgstr "クロック速度"
 
 #: resources/ui/performance_page/gpu_details.blp:146
 #: resources/ui/performance_page/cpu_details.blp:106
-#, fuzzy
 msgid "Power Draw"
 msgstr "消費電力"
 
@@ -887,11 +873,11 @@ msgstr "メモリ速度"
 
 #: resources/ui/performance_page/gpu_details.blp:425
 msgid "Video encode"
-msgstr "ビデオ エンコード"
+msgstr "ビデオエンコード"
 
 #: resources/ui/performance_page/gpu_details.blp:472
 msgid "Video decode"
-msgstr "ビデオ デコード"
+msgstr "ビデオデコード"
 
 #: resources/ui/performance_page/gpu_details.blp:503
 #: resources/ui/performance_page/cpu_details.blp:227
@@ -939,14 +925,12 @@ msgid "Write speed"
 msgstr "書き込み速度"
 
 #: resources/ui/performance_page/disk_details.blp:131
-#, fuzzy
 msgid "Total Read"
-msgstr "受信した総量"
+msgstr "総読み取り量"
 
 #: resources/ui/performance_page/disk_details.blp:161
-#, fuzzy
 msgid "Total Written"
-msgstr "送信した総量"
+msgstr "総書き込み量"
 
 #: resources/ui/performance_page/disk_details.blp:191
 msgid "Active time"
@@ -974,15 +958,15 @@ msgstr ""
 
 #: resources/ui/performance_page/disk_details.blp:338
 msgid "Serial:"
-msgstr ""
+msgstr "シリアル番号:"
 
 #: resources/ui/performance_page/disk_details.blp:357
 msgid "Rotation Rate"
-msgstr ""
+msgstr "回転速度"
 
 #: resources/ui/performance_page/disk_details.blp:478
 msgid "Partitions"
-msgstr ""
+msgstr "パーティション"
 
 #: resources/ui/performance_page/cpu_details.blp:72
 msgid "Speed"
@@ -1049,9 +1033,8 @@ msgid "Power preference:"
 msgstr "電源設定:"
 
 #: resources/ui/preferences/apps_services_page.blp:25
-#, fuzzy
 msgid "Apps & Services"
-msgstr "サービス"
+msgstr "アプリとサービス"
 
 #: resources/ui/preferences/apps_services_page.blp:30
 msgid "Merge Process Stats"
@@ -1107,9 +1090,8 @@ msgid "Update Interval"
 msgstr "更新間隔"
 
 #: resources/ui/preferences/general_page.blp:31
-#, fuzzy
 msgid "In seconds"
-msgstr "{}秒"
+msgstr "秒単位"
 
 #: resources/ui/preferences/performance_page.blp:25
 #: resources/ui/keyboard_shortcuts.blp:57
@@ -1117,13 +1099,12 @@ msgid "Performance Page"
 msgstr "パフォーマンス ページ"
 
 #: resources/ui/preferences/performance_page.blp:29
-#, fuzzy
 msgid "Graph Settings"
-msgstr "ネットワーク設定"
+msgstr "グラフ設定"
 
 #: resources/ui/preferences/performance_page.blp:32
 msgid "Data Points"
-msgstr ""
+msgstr "データポイント数"
 
 #: resources/ui/preferences/performance_page.blp:50
 msgid "Smooth Graphs"
@@ -1167,20 +1148,19 @@ msgstr "ネットワーク情報の表示"
 
 #: resources/ui/preferences/performance_page.blp:79
 msgid "Wired"
-msgstr ""
+msgstr "有線"
 
 #: resources/ui/preferences/performance_page.blp:83
 msgid "Wireless"
-msgstr ""
+msgstr "無線"
 
 #: resources/ui/preferences/performance_page.blp:87
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: resources/ui/preferences/performance_page.blp:91
-#, fuzzy
 msgid "Virtual"
-msgstr "仮想化:"
+msgstr "仮想"
 
 #: resources/ui/preferences/performance_page.blp:92
 msgid "Docker, Multipass, Bridge"
@@ -1214,7 +1194,7 @@ msgstr "デフォルトでメモリ情報を表示する"
 
 #: resources/ui/preferences/units_page.blp:25
 msgid "Units"
-msgstr ""
+msgstr "単位"
 
 #: resources/ui/preferences/units_page.blp:30
 msgid "Memory Usage Unit"
@@ -1480,9 +1460,8 @@ msgstr "PID"
 #: resources/ui/table_view/table_view.blp:65
 #: resources/ui/table_view/process_details_dialog.blp:227
 #: src/table_view/mod.rs:903 src/table_view/mod.rs:908
-#, fuzzy
 msgid "Swap"
-msgstr "スワップ使用率"
+msgstr "スワップ"
 
 #: resources/ui/table_view/table_view.blp:71 src/performance_page/mod.rs:1264
 #: src/table_view/mod.rs:886 src/table_view/mod.rs:894
@@ -1777,9 +1756,8 @@ msgid "Reset to Default"
 msgstr "デフォルトの状態に戻す"
 
 #: resources/ui/window.blp:70
-#, fuzzy
 msgid "Edit Sidebar"
-msgstr "サイドバーの切り替え"
+msgstr "サイドバーの編集"
 
 #: resources/ui/window.blp:134
 msgid "Type a name or PID to search"
@@ -1792,7 +1770,7 @@ msgstr "ディスク情報を表示"
 
 #: resources/ui/window.blp:164
 msgid "Main Menu"
-msgstr ""
+msgstr "メインメニュー"
 
 #: resources/ui/window.blp:181
 msgid "Performance"
@@ -1808,11 +1786,11 @@ msgstr "サービス"
 
 #: resources/ui/window.blp:225
 msgid "_Preferences"
-msgstr "設定"
+msgstr "設定(P)"
 
 #: resources/ui/window.blp:230
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "キーボードショートカット(K)"
 
 #: resources/ui/window.blp:237
 #, fuzzy
@@ -1821,28 +1799,27 @@ msgstr "ディスク情報を表示"
 
 #: resources/ui/window.blp:244
 msgid "Open _Wiki"
-msgstr ""
+msgstr "ウィキを開く(W)"
 
 #: resources/ui/window.blp:250
 msgid "Show _First Run Dialog"
-msgstr ""
+msgstr "初回起動時のダイアログを表示"
 
 #: resources/ui/window.blp:257
-#, fuzzy
 msgid "_About Mission Center"
-msgstr "Mission Center について"
+msgstr "Mission Center について(A)"
 
 #: src/apps_page/mod.rs:303
-#, fuzzy, rust-format
+#, rust-format
 msgid "{} Running App"
 msgid_plural "{} Running Apps"
-msgstr[0] "{} 個のサービスが実行中"
+msgstr[0] "{}個のアプリが実行中"
 
 #: src/apps_page/mod.rs:313
-#, fuzzy, rust-format
+#, rust-format
 msgid "{} Running Process"
 msgid_plural "{} Running Processes"
-msgstr[0] "{} 個のサービスが実行中"
+msgstr[0] "{}個のプロセスが実行中"
 
 #: src/performance_page/widgets/eject_failure_dialog.rs:157
 #: src/performance_page/widgets/smart_failure_dialog.rs:67
@@ -2052,14 +2029,12 @@ msgid "No"
 msgstr "いいえ"
 
 #: src/performance_page/cpu.rs:1034 src/performance_page/gpu.rs:1122
-#, fuzzy
 msgid "Power draw over "
-msgstr "消費電力"
+msgstr "直近の消費電力: "
 
 #: src/performance_page/cpu.rs:1037 src/performance_page/gpu.rs:1125
-#, fuzzy
 msgid "Clock speed over "
-msgstr "メモリ使用率 "
+msgstr "直近のクロック速度: "
 
 #: src/performance_page/disk.rs:179
 #, rust-format
@@ -2158,7 +2133,7 @@ msgstr ""
 
 #: src/performance_page/gpu.rs:1116
 msgid "Dedicated and shared memory usage over "
-msgstr ""
+msgstr "直近の専用/共有メモリ使用率: "
 
 #: src/performance_page/memory.rs:358
 #, rust-format
@@ -2201,16 +2176,15 @@ msgstr "失敗"
 
 #: src/performance_page/network.rs:458
 msgid "Disconnected"
-msgstr ""
+msgstr "切断"
 
 #: src/performance_page/network.rs:459
 msgid "Disconnecting"
 msgstr ""
 
 #: src/performance_page/network.rs:460
-#, fuzzy
 msgid "Connected"
-msgstr "接続の種類:"
+msgstr "接続済み"
 
 #: src/performance_page/network.rs:461
 #, fuzzy
@@ -2226,9 +2200,8 @@ msgid "Waiting for auth"
 msgstr ""
 
 #: src/performance_page/network.rs:464
-#, fuzzy
 msgid "Unavailable"
-msgstr "利用可能"
+msgstr "利用不可"
 
 #: src/performance_page/network.rs:465
 #, fuzzy
@@ -2335,7 +2308,7 @@ msgid_plural "{} minutes"
 msgstr[0] ""
 
 #: src/main.rs:126 src/main.rs:205
-#, fuzzy, rust-format
+#, rust-format
 msgid "{} second"
 msgid_plural "{} seconds"
 msgstr[0] "{}秒"
