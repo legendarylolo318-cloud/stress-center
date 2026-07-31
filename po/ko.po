@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-07-26 13:01+0000\n"
+"PO-Revision-Date: 2026-08-01 07:01+0000\n"
 "Last-Translator: Doyoung Park <doyoungp.00@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/ko/>\n"
@@ -286,52 +286,54 @@ msgstr "그래프 애니메이션 사용 여부"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:203
 msgid "Show CPU information by default"
-msgstr "CPU 정보를 기본으로 보이기"
+msgstr "기본적으로 CPU 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:208
 msgid "Show memory information by default"
-msgstr "메모리 정보를 기본으로 보이기"
+msgstr "기본적으로 메모리 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:213
 #: resources/ui/preferences/performance_page.blp:70
 msgid "Show disk information by default"
-msgstr "디스크 정보를 기본으로 보이기"
+msgstr "기본적으로 디스크 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:218
 #: resources/ui/preferences/performance_page.blp:75
 msgid "Show network information by default"
-msgstr "네트워크 정보를 기본으로 보이기"
+msgstr "기본적으로 네트워크 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:223
 msgid "Show wired network devices by default"
-msgstr "유선 네트워크 디바이스를 기본으로 보이기"
+msgstr "기본적으로 유선 네트워크 디바이스 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:228
 msgid "Show wireless network devices by default"
-msgstr "무선 네트워크 디바이스를 기본으로 보이기"
+msgstr "기본적으로 무선 네트워크 디바이스 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:233
 msgid "Show VPN network devices by default"
-msgstr "VPN 네트워크 디바이스를 기본으로 보이기"
+msgstr "기본적으로 VPN 네트워크 디바이스 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:238
 msgid "Show virtual network devices (Docker, Multipass, Bridge) by default"
-msgstr "가상 네트워크 디바이스(도커, 멀티패스, 브리지)를 기본으로 보이기"
+msgstr "기본적으로 가상 네트워크 디바이스(도커, 멀티패스, 브리지) 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:243
 msgid "Show other network devices (Bluetooth, InfiniBand, WWAN) by default"
-msgstr "기타 네트워크 디바이스(블루투스, 인피니밴드, WWAN)을 기본으로 보이기"
+msgstr ""
+"기본적으로 기타 네트워크 디바이스(블루투스, 인피니밴드, WWAN) 정보를 "
+"표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:248
 #: resources/ui/preferences/performance_page.blp:103
 msgid "Show GPU information by default"
-msgstr "GPU 정보를 기본으로 보이기"
+msgstr "기본적으로 GPU 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:253
 #: data/io.missioncenter.MissionCenter.gschema.xml:258
 #: resources/ui/preferences/performance_page.blp:108
 msgid "Show fan information by default"
-msgstr "팬 정보를 기본으로 보이기"
+msgstr "기본적으로 팬 정보를 표시합니다"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:263
 msgid "Show the mem composition widget"
@@ -1166,7 +1168,7 @@ msgstr "배터리 정보 보기"
 
 #: resources/ui/preferences/performance_page.blp:113
 msgid "Show battery information by default"
-msgstr "기본으로 배터리 정보 보기"
+msgstr "기본적으로 배터리 정보를 표시합니다"
 
 #: resources/ui/preferences/units_page.blp:25
 msgid "Units"
