@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-07-14 07:01+0000\n"
-"Last-Translator: anon <anon0000000000@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-08-03 13:25+0000\n"
+"Last-Translator: numerfolt <numerfolt@users.noreply.hosted.weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/de/>\n"
 "Language: de\n"
@@ -469,12 +469,12 @@ msgstr "_Alle Threads"
 
 #: resources/ui/performance_page/cpu.blp:185
 msgid "All Threads _Stacked"
-msgstr ""
+msgstr "Alle Threads Ge_stapelt"
 
 #: resources/ui/performance_page/cpu.blp:191
 #, fuzzy
 msgid "Change B_ottom Graph To"
-msgstr "G_raph ändern in"
+msgstr "Unteren G_raph ändern in"
 
 #: resources/ui/performance_page/cpu.blp:194
 #: resources/ui/performance_page/gpu.blp:219
@@ -642,7 +642,7 @@ msgstr "Speicherverbrauch über "
 #: resources/ui/performance_page/gpu.blp:206
 #, fuzzy
 msgid "Change Middle Graph To"
-msgstr "G_raph ändern in"
+msgstr "Mittleren G_raph ändern in"
 
 #: resources/ui/performance_page/gpu.blp:209
 #: resources/ui/performance_page/gpu.blp:243
@@ -662,7 +662,7 @@ msgstr "_Taktgeschwindigkeiten"
 #: resources/ui/performance_page/gpu.blp:240
 #, fuzzy
 msgid "Change Bottom Graph To"
-msgstr "G_raph ändern in"
+msgstr "Unteren G_raph ändern zu"
 
 #: resources/ui/performance_page/memory.blp:41
 #: resources/ui/table_view/table_view.blp:59
@@ -978,7 +978,7 @@ msgstr "Drehzahl"
 
 #: resources/ui/performance_page/disk_details.blp:478
 msgid "Partitions"
-msgstr ""
+msgstr "Partitionen"
 
 #: resources/ui/performance_page/cpu_details.blp:72
 msgid "Speed"
