@@ -261,7 +261,7 @@ impl MissionCenterApplication {
         g_message!(
             "MissionCenter::Application",
             "Starting Mission Center v{}",
-            env!("CARGO_PKG_VERSION")
+            VERSION
         );
 
         this

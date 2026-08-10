@@ -348,7 +348,7 @@ export LDFLAGS=-lgcc
 
 cd "$SRC_PATH"
 BUILD_DIR="_build-$(arch)"
-rm -rf "$BUILD_DIR" && meson setup "$BUILD_DIR" -Dbuildtype=release -Db_lto=true -Dprefix=/usr
+rm -rf "$BUILD_DIR" && meson setup "$BUILD_DIR" -Dbuildtype=release -Db_lto=true -Dprefix=/usr -Dversion="$VERSION_STRING"
 ninja -C "$BUILD_DIR" && env DESTDIR="$OUT_PATH" ninja -C "$BUILD_DIR" install
 
 cp "$OUT_PATH/usr/share/glib-2.0/schemas/io.missioncenter.MissionCenter.gschema.xml" "$DEPS_PATH/usr/share/glib-2.0/schemas/"

@@ -3,8 +3,14 @@ pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.proje
 gnome = import('gnome')
 libudev = dependency('libudev', required: true)
 
+if get_option('version') != ''
+    version = get_option('version')
+else
+    version = meson.project_version()
+endif
+
 conf = configuration_data()
-conf.set_quoted('VERSION', meson.project_version())
+conf.set_quoted('VERSION', version)
 conf.set_quoted('GETTEXT_PACKAGE', 'missioncenter')
 conf.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set_quoted('PKGDATADIR', pkgdatadir)

@@ -20,6 +20,10 @@ spec:
       default: ""
       type: string
       description: "Tarball url to use, must be a valid url"
+    VERSION_STRING:
+      default: ""
+      type: string
+      description: "Version string to use. Defaults to commit hash and date"
 ---
 image: "ubuntu:26.04"
 
@@ -37,6 +41,10 @@ stages:
     - apt-get install -y git
     - sed -i 's/= ..\/gng.git/= https:\/\/gitlab.com\/mission-center-devs\/gng.git/g' .gitmodules
     - git submodule update --init --recursive
+
+  setup_version:
+    - if [[ -z "$[[ inputs.VERSION_STRING ]]" ]]; then export VERSION_STRING="$(git describe --tags || git rev-parse --short HEAD)"; else export VERSION_STRING="$[[ inputs.VERSION_STRING ]]"; fi
+    - echo "$VERSION_STRING"
 
   setup_apt:
     - rm -rf /etc/apt/sources.list.d
@@ -104,10 +112,11 @@ build-job-x86:
     - !reference [ ".shared", "setup_apt" ]
     - !reference [ ".shared", "install_rust" ]
     - !reference [ ".shared", "checkout_submodule" ]
+    - !reference [ ".shared", "setup_version" ]
 
     - pip install meson ninja --break-system-packages
   script:
-    - meson setup _build -Dbuildtype=release
+    - meson setup _build -Dbuildtype=release -Dversion=$VERSION_STRING
     - ninja -C _build
     - glib-compile-schemas --strict data/
   rules:
@@ -123,10 +132,11 @@ build-job-arm:
     - !reference [ ".shared", "setup_apt_ports" ]
     - !reference [ ".shared", "install_rust" ]
     - !reference [ ".shared", "checkout_submodule" ]
+    - !reference [ ".shared", "setup_version" ]
 
     - pip install meson ninja --break-system-packages
   script:
-    - meson setup _build -Dbuildtype=release
+    - meson setup _build -Dbuildtype=release -Dversion=$VERSION_STRING
     - ninja -C _build
     - glib-compile-schemas --strict data/
   rules:
@@ -182,6 +192,7 @@ package-build-job-x86:
   before_script:
     - !reference [ ".shared", "setup_apt_noble" ]
     - !reference [ ".shared", "checkout_submodule" ]
+    - !reference [ ".shared", "setup_version" ]
   script:
     - SRC_PATH=$PWD OUT_PATH=$PWD/portable bash support/build-with-gtk-libadwaita.sh &> logs.txt || (tail -n 500 logs.txt && exit 1)
     - cd portable && tar zcf ../portable-x86_64.tar.gz *
@@ -205,6 +216,7 @@ package-build-job-arm:
   before_script:
     - !reference [ ".shared", "setup_apt_noble_ports" ]
     - !reference [ ".shared", "checkout_submodule" ]
+    - !reference [ ".shared", "setup_version" ]
   script:
     - SRC_PATH=$PWD OUT_PATH=$PWD/portable bash support/build-with-gtk-libadwaita.sh &> logs.txt || (tail -n 500 logs.txt && exit 1)
     - cd portable && tar zcf ../portable-aarch64.tar.gz *
