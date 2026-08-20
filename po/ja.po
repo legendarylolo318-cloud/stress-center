@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: missioncenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 09:06+0300\n"
-"PO-Revision-Date: 2026-07-30 12:01+0000\n"
-"Last-Translator: \"Rinrin.rs\" <rinrin0413.valley@gmail.com>\n"
+"PO-Revision-Date: 2026-08-21 02:52+0000\n"
+"Last-Translator: Dacchiii <dacchihii@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/mission-center/"
 "mission-center/ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: data/io.missioncenter.MissionCenter.desktop.in:2
 #: data/io.missioncenter.MissionCenter.metainfo.xml.in:4
@@ -181,32 +181,32 @@ msgstr "データ／UIが更新される速度(50ms単位で)"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:70
 msgid "How many points should be displayed on each chart?"
-msgstr ""
+msgstr "何個のポイントをそれぞれの図に表示しますか？"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:75
 msgid "Whether or not to use bits or bytes (default) for memory"
-msgstr ""
+msgstr "メモリにビットを使用するかバイト（デフォルト）を使用するか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:80
 msgid "Whether or not to use base-10 or base-2 (default) for memory"
-msgstr ""
+msgstr "メモリに2進数を使用するか10進数を使用するか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:85
 msgid "Whether or not to use bits or bytes (default) for drive speed + size"
-msgstr ""
+msgstr "ドライブの速度と容量にビットを使うかバイト（デフォルト）を使うか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:90
 msgid ""
 "Whether or not to use base-10 or base-2 (default) for drive speed + size"
-msgstr ""
+msgstr "ドライブの速度と容量に2進数（デフォルト）を使用するか10進数を使用するか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:95
 msgid "Whether or not to use bits (default) or Bytes for network speed"
-msgstr ""
+msgstr "ネットワーク速度にビット（デフォルト）を使用するかバイトを使用するか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:100
 msgid "Whether or not to use base-10 (default) or base-2 for network speed"
-msgstr ""
+msgstr "ネットワーク速度に10進数（デフォルト）を使用するか2進数を使用するか"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:105
 msgid ""
@@ -234,11 +234,11 @@ msgstr ""
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:130
 msgid "Show a separator between each column in the Apps view"
-msgstr ""
+msgstr "アプリビューのそれぞれの列に区切り線を表示"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:135
 msgid "Gray out values that equal zero in the Apps view"
-msgstr ""
+msgstr "アプリビューで0に等しい値をグレーアウトする"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:140
 #, fuzzy
@@ -330,11 +330,11 @@ msgstr "デフォルトでネットワーク情報を表示する"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:238
 msgid "Show virtual network devices (Docker, Multipass, Bridge) by default"
-msgstr ""
+msgstr "デフォルトで仮想ネットワークデバイス（Docker、Multipass、Bridge）を表示"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:243
 msgid "Show other network devices (Bluetooth, InfiniBand, WWAN) by default"
-msgstr ""
+msgstr "他のネットワークデバイス（Bluetooth、InfiniBand、WWAN）をデフォルトで表示"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:248
 #: resources/ui/preferences/performance_page.blp:103
@@ -358,29 +358,31 @@ msgstr "スワップのグラフを表示する"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:274
 msgid "Middle Graph's Content and visibility"
-msgstr ""
+msgstr "中央のグラフの内容と表示"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:280
 msgid "Bottom Graph's Content and visibility"
-msgstr ""
+msgstr "下部のグラフの内容と表示"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:286
 msgid "The ordering of entries in the application sidebar"
-msgstr ""
+msgstr "アプリケーションサイドバーのエントリの並び順"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:292
 msgid "Graphs that should be hidden in the application sidebar"
-msgstr ""
+msgstr "アプリケーションサイドバーでは非表示になるグラフ"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:297
 msgid ""
 "Per-device visibility overrides (semicolon-separated name:show or name:hide "
 "entries)"
 msgstr ""
+"デバイスごとに表示をオーバーライドする（セミコロン区切りで name:show または "
+"name:hide entries）"
 
 #: data/io.missioncenter.MissionCenter.gschema.xml:302
 msgid "If it's your first time running Mission Center"
-msgstr ""
+msgstr "もしあなたが初めてMission Centerを実行したのならば"
 
 #: resources/ui/apps_page/page.blp:87
 msgid "Collapse all apps and processes"
@@ -406,11 +408,11 @@ msgstr "使用中:"
 
 #: resources/ui/performance_page/memory_info_tooltip.blp:36
 msgid "Modified:"
-msgstr ""
+msgstr "修正済み："
 
 #: resources/ui/performance_page/memory_info_tooltip.blp:41
 msgid "Standby:"
-msgstr ""
+msgstr "待機中："
 
 #: resources/ui/performance_page/memory_info_tooltip.blp:46
 msgid "Free:"
@@ -839,7 +841,7 @@ msgstr "更新"
 
 #: resources/ui/performance_page/disk_smart_data_dialog.blp:176
 msgid "Assessment"
-msgstr ""
+msgstr "評価"
 
 #: resources/ui/performance_page/gpu_details.blp:51
 #: resources/ui/performance_page/cpu_details.blp:46
@@ -954,7 +956,7 @@ msgstr "システムディスク:"
 
 #: resources/ui/performance_page/disk_details.blp:319
 msgid "WWN:"
-msgstr ""
+msgstr "WWN："
 
 #: resources/ui/performance_page/disk_details.blp:338
 msgid "Serial:"
@@ -1059,11 +1061,11 @@ msgstr "列の並べ替え状態をアプリの再起動後も記憶する"
 
 #: resources/ui/preferences/apps_services_page.blp:45
 msgid "Scale CPU Usage to Core Count"
-msgstr ""
+msgstr "CPU使用率をコア数に合わせる"
 
 #: resources/ui/preferences/apps_services_page.blp:46
 msgid "Show CPU usage scaled to the number of available cores"
-msgstr ""
+msgstr "利用可能なコア数に合わせてCPU使用率を表示"
 
 #: resources/ui/preferences/apps_services_page.blp:50
 msgid "Show Column Separators"
@@ -1075,11 +1077,11 @@ msgstr "それぞれの列の間に区切り線を表示"
 
 #: resources/ui/preferences/apps_services_page.blp:55
 msgid "Grey Out Zeroes"
-msgstr ""
+msgstr "0の値をグレーアウト"
 
 #: resources/ui/preferences/apps_services_page.blp:56
 msgid "Gray out values that equal zero"
-msgstr ""
+msgstr "0に等しい値をグレーアウト"
 
 #: resources/ui/preferences/general_page.blp:25
 msgid "General"
@@ -1116,11 +1118,11 @@ msgstr "ギザギザな線の代わりに、滑らかな線でグラフを描画
 
 #: resources/ui/preferences/performance_page.blp:55
 msgid "Sliding Graphs"
-msgstr ""
+msgstr "スライディンググラフ"
 
 #: resources/ui/preferences/performance_page.blp:56
 msgid "Animate graphs (may negatively impact performance)"
-msgstr ""
+msgstr "グラフをアニメート（パフォーマンスに悪影響を及ぼすかもしれません）"
 
 #: resources/ui/preferences/performance_page.blp:60
 msgid "Scale Network Graphs Dynamically"
@@ -1164,7 +1166,7 @@ msgstr "仮想"
 
 #: resources/ui/preferences/performance_page.blp:92
 msgid "Docker, Multipass, Bridge"
-msgstr ""
+msgstr "Docker、Multipass、Bridge"
 
 #: resources/ui/preferences/performance_page.blp:96
 msgid "Other"
@@ -1172,7 +1174,7 @@ msgstr "その他"
 
 #: resources/ui/preferences/performance_page.blp:97
 msgid "Bluetooth, InfiniBand, WWAN"
-msgstr ""
+msgstr "Bluetooth、InfiniBand、WWAN"
 
 #: resources/ui/preferences/performance_page.blp:102
 msgid "Show GPU Information"
@@ -1202,7 +1204,7 @@ msgstr "メモリ使用率の単位"
 
 #: resources/ui/preferences/units_page.blp:37
 msgid "Use Bytes as a Unit of Measurement for Memory"
-msgstr ""
+msgstr "メモリの単位としてバイトを使う"
 
 #: resources/ui/preferences/units_page.blp:38
 #: resources/ui/preferences/units_page.blp:76
@@ -1212,7 +1214,7 @@ msgstr "バイト"
 
 #: resources/ui/preferences/units_page.blp:42
 msgid "Use Bits as a Unit of Measurement for Memory"
-msgstr ""
+msgstr "メモリの単位としてビットを使う"
 
 #: resources/ui/preferences/units_page.blp:43
 #: resources/ui/preferences/units_page.blp:81
@@ -1227,35 +1229,35 @@ msgstr "メモリ使用率"
 
 #: resources/ui/preferences/units_page.blp:56
 msgid "Use Base 10 for Memory"
-msgstr ""
+msgstr "メモリに10進数を使用"
 
 #: resources/ui/preferences/units_page.blp:57
 #: resources/ui/preferences/units_page.blp:95
 #: resources/ui/preferences/units_page.blp:133
 msgid "Base 10"
-msgstr ""
+msgstr "10進数"
 
 #: resources/ui/preferences/units_page.blp:61
 msgid "Use Base 2 for Memory"
-msgstr ""
+msgstr "メモリに2進数を使用"
 
 #: resources/ui/preferences/units_page.blp:62
 #: resources/ui/preferences/units_page.blp:100
 #: resources/ui/preferences/units_page.blp:138
 msgid "Base 2"
-msgstr ""
+msgstr "2進数"
 
 #: resources/ui/preferences/units_page.blp:68
 msgid "Drive Usage Unit"
-msgstr ""
+msgstr "ドライブ使用率ユニット"
 
 #: resources/ui/preferences/units_page.blp:75
 msgid "Use Bytes as a Unit of Measurement for Disk Drives"
-msgstr ""
+msgstr "ディスクドライブの単位としてバイトを使う"
 
 #: resources/ui/preferences/units_page.blp:80
 msgid "Use Bits as a Unit of Measurement for Disk Drives"
-msgstr ""
+msgstr "ディスクドライブの単位としてビットを使う"
 
 #: resources/ui/preferences/units_page.blp:87
 msgid "Drive Usage Base"
@@ -1263,15 +1265,15 @@ msgstr ""
 
 #: resources/ui/preferences/units_page.blp:94
 msgid "Use Base 10 for Disk Drives"
-msgstr ""
+msgstr "ディスクドライブに10進数を使う"
 
 #: resources/ui/preferences/units_page.blp:99
 msgid "Use Base 2 for Disk Drives"
-msgstr ""
+msgstr "ディスクドライブに2進数を使う"
 
 #: resources/ui/preferences/units_page.blp:106
 msgid "Network Usage Unit"
-msgstr ""
+msgstr "ネットワーク使用率ユニット"
 
 #: resources/ui/preferences/units_page.blp:113
 msgid "Use Bytes as a Unit of Measurement for Network Interfaces"
