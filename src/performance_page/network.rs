@@ -29,7 +29,8 @@ use magpie_types::network::{Connection, ConnectionKind, ConnectionState};
 
 use crate::i18n::*;
 use crate::performance_page::widgets::{
-    AnimationFrame, DatasetGroup, FillingSettings, GraphWidget, RoundingSettings, ScalingSettings,
+    AnimationFrame, DatasetGroup, FillingSettings, GraphWidget, GraphWidgetSettingsExt,
+    RoundingSettings, ScalingSettings,
 };
 use crate::{application::INTERVAL_STEP, to_short_human_readable_time};
 use crate::{settings, DataType};

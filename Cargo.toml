@@ -35,6 +35,9 @@ features = ["gnome_50"]
 [dependencies.magpie-types]
 path = "subprojects/magpie/types"
 
+[dependencies.mc-graph-widget]
+path = "subprojects/graph-widget"
+
 [dependencies.nng-c-sys]
 version = "1.11"
 default-features = false

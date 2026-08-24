@@ -804,6 +804,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "mc-graph-core"
+version = "0.1.0"
+
+[[package]]
+name = "mc-graph-widget"
+version = "0.1.0"
+dependencies = [
+ "gtk4",
+ "libadwaita",
+ "mc-graph-core",
+]
+
+[[package]]
 name = "memchr"
 version = "2.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -850,6 +863,7 @@ dependencies = [
  "gtk4",
  "libadwaita",
  "magpie-types",
+ "mc-graph-widget",
  "nng-c",
  "nng-c-sys",
  "paste",

@@ -39,7 +39,7 @@ stages:
 .shared:
   checkout_submodule:
     - apt-get install -y git
-    - sed -i 's/= ..\/gng.git/= https:\/\/gitlab.com\/mission-center-devs\/gng.git/g' .gitmodules
+    - sed -i 's/= ..\//= https:\/\/gitlab.com\/mission-center-devs\//g' .gitmodules
     - git submodule update --init --recursive
 
   setup_version:

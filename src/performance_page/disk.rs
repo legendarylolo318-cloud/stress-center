@@ -32,7 +32,8 @@ use crate::i18n::*;
 use crate::performance_page::disk_details::DiskDetails;
 use crate::performance_page::widgets::{
     AnimationFrame, DatasetGroup, EjectFailureDialog, FillingSettings, GraphWidget,
-    PartitionUsageItem, RoundingSettings, ScalingSettings, SmartDataDialog, SmartFailureDialog,
+    GraphWidgetSettingsExt, PartitionUsageItem, RoundingSettings, ScalingSettings, SmartDataDialog,
+    SmartFailureDialog,
 };
 use crate::{app, settings, to_short_human_readable_time, DataType};
 

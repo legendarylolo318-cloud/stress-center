@@ -41,8 +41,8 @@ use magpie_types::network::{Connection, ConnectionKind, ConnectionState};
 use crate::i18n::*;
 use crate::magpie_client::DiskKind;
 use crate::performance_page::widgets::{
-    AnimationFrame, DatasetGroup, FillingSettings, GraphWidget, RoundingSettings, ScalingSettings,
-    SidebarDropHint,
+    AnimationFrame, DatasetGroup, FillingSettings, GraphWidget, GraphWidgetSettingsExt,
+    RoundingSettings, ScalingSettings, SidebarDropHint,
 };
 use crate::widgets::Placeholder;
 use crate::{settings, DataType};
