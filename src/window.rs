@@ -1001,11 +1001,11 @@ mod imp {
 
                     if this.performance_page_active.get() {
                         let should_hide_sidebar = this.should_hide_sidebar();
-                        this.split_view.set_show_sidebar(!should_hide_sidebar);
                         this.split_view.set_collapsed(should_hide_sidebar);
+                        this.split_view.set_show_sidebar(!should_hide_sidebar);
                     } else {
-                        this.split_view.set_show_sidebar(false);
                         this.split_view.set_collapsed(true);
+                        this.split_view.set_show_sidebar(false);
                     }
                 }
             });
