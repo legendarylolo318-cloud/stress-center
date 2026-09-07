@@ -1,6 +1,6 @@
 [submodule "subprojects/magpie"]
 	path = subprojects/magpie
-	url = ../gng.git
+	url = https://gitlab.com/mission-center-devs/gng.git
 [submodule "subprojects/graph-widget"]
 	path = subprojects/graph-widget
-	url = ../graph-widget.git
+	url = https://gitlab.com/mission-center-devs/graph-widget.git
