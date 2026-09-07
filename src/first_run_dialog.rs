@@ -1,6 +1,7 @@
 /* first_run_dialog.rs
  *
  * Copyright 2026 Mission Center Developers
+ * Copyright 2026 Stress Center Contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -190,7 +191,7 @@ impl FirstRunDialog {
                     let restart_dialog = AlertDialog::builder()
                         .modal(true)
                         .message(&i18n("Success!"))
-                        .detail(&i18n("Restart Mission Center to apply changes?"))
+                        .detail(&i18n("Restart Stress Center to apply changes?"))
                         .buttons([i18n("Restart"), i18n("Close")])
                         .build();
                     let app_clone = app_clone.clone();

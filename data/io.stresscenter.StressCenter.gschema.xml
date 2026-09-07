@@ -6,7 +6,7 @@
         <value nick="None" value="255"/>
     </enum>
 
-    <enum id="io.missioncenter.AppsPageViewColumn">
+    <enum id="io.stresscenter.AppsPageViewColumn">
         <value nick="Name" value="0"/>
         <value nick="Pid" value="1"/>
         <value nick="Cpu" value="2"/>
@@ -19,7 +19,7 @@
         <value nick="None" value="255"/>
     </enum>
 
-    <enum id="io.missioncenter.InterfaceStyle">
+    <enum id="io.stresscenter.InterfaceStyle">
         <!-- ADW_COLOR_SCHEME_DFEAULT -->
         <value nick="system" value="0"/>
         <!-- ADW_COLOR_SCHEME_FORCE_LIGHT -->
@@ -28,7 +28,7 @@
         <value nick="dark" value="4"/>
     </enum>
 
-    <schema id="io.missioncenter.MissionCenter" path="/io/missioncenter/MissionCenter/">
+    <schema id="io.stresscenter.StressCenter" path="/io/stresscenter/StressCenter/">
         <key name="window-width" type="i">
             <default>600</default>
         </key>
@@ -46,7 +46,7 @@
             <summary>Which page is shown on application startup</summary>
         </key>
 
-        <key name="window-interface-style" enum="io.missioncenter.InterfaceStyle">
+        <key name="window-interface-style" enum="io.stresscenter.InterfaceStyle">
             <default>"system"</default>
             <summary>Interface Style</summary>
             <description>If light or dark interface style should be used</description>

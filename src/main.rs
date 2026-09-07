@@ -1,6 +1,7 @@
 /* main.rs
  *
  * Copyright 2026 Mission Center Developers
+ * Copyright 2026 Stress Center Contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,6 +47,7 @@ mod magpie_client;
 mod performance_page;
 mod preferences;
 mod services_page;
+mod stress_page;
 mod table_view;
 mod widgets;
 mod window;
@@ -492,6 +494,15 @@ fn app_id(fallback: String) -> String {
 }
 
 fn main() {
+    // stress-ng forks many worker processes; if we panic mid-test they'd be
+    // left running as orphans, so make sure a panic kills the process group
+    // just like a normal Stop or app shutdown would.
+    let default_panic_hook = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        stress_page::kill_active_group_now();
+        default_panic_hook(info);
+    }));
+
     bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR).expect("Unable to bind the text domain");
     bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")
         .expect("Unable to set the text domain encoding");

@@ -1,6 +1,7 @@
 /* application.rs
  *
  * Copyright 2024 Romeo Calota
+ * Copyright 2026 Stress Center Contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,7 +73,7 @@ mod imp {
     impl Default for MissionCenterApplication {
         fn default() -> Self {
             Self {
-                settings: gio::Settings::new("io.missioncenter.MissionCenter"),
+                settings: gio::Settings::new("io.stresscenter.StressCenter"),
                 sys_info: RefCell::new(None),
                 window: RefCell::new(None),
                 apps_icons_cache: Cell::new(None),
@@ -210,6 +211,14 @@ mod imp {
 
             self.window
                 .set(window.downcast_ref::<crate::MissionCenterWindow>().cloned());
+        }
+
+        fn shutdown(&self) {
+            // stress-ng forks many worker processes; make sure none are left
+            // running as orphans if the app quits mid-test.
+            crate::stress_page::kill_active_group_now();
+
+            self.parent_shutdown();
         }
     }
 
@@ -514,17 +523,24 @@ impl MissionCenterApplication {
         };
 
         let about = adw::AboutDialog::builder()
-            .application_name("Mission Center")
-            .application_icon("io.missioncenter.MissionCenter")
-            .developer_name("Mission Center Developers")
-            .developers(["Romeo Calota", "QwertyChouskie", "jojo2357", "Jan Luca"])
+            .application_name("Stress Center")
+            .application_icon("io.stresscenter.StressCenter")
+            .developer_name("Stress Center Contributors")
+            .developers([
+                "Stress Center Contributors",
+                "Romeo Calota",
+                "QwertyChouskie",
+                "jojo2357",
+                "Jan Luca",
+            ])
             .translator_credits(i18n("translator-credits"))
             .version(VERSION)
-            .issue_url("https://gitlab.com/mission-center-devs/mission-center/-/issues")
-            .copyright("© 2023-2025 Mission Center Developers")
+            .issue_url("https://github.com/legendarylolo318-cloud/stress-center/issues")
+            .copyright("© 2026 Stress Center Contributors\n© 2023-2025 Mission Center Developers")
             .license_type(gtk::License::Gpl30)
-            .website("https://missioncenter.io")
-            .release_notes(r#"<p>Noteworthy changes:</p>
+            .website("https://github.com/legendarylolo318-cloud/stress-center")
+            .release_notes(r#"<p>Stress Center is a fork of <a href="https://gitlab.com/mission-center-devs/mission-center">Mission Center</a> that adds a built-in Stress page powered by stress-ng. See NOTICE.md in the repository for a full list of changes.</p>
+<p>Inherited from Mission Center 1.2.0 — noteworthy changes in that release:</p>
 <ul>
 <li>Add a new Battery page to the Performance tab, with charge graphs and detailed battery information (@jlo62)</li>
 <li>Show per-partition usage details on the disk page, including used and free space (@jojo2357)</li>

@@ -40,6 +40,8 @@ blueprints = custom_target('blueprints',
 
     'ui/services_page/page.blp',
 
+    'ui/stress_page/page.blp',
+
     'ui/table_view/table_view.blp',
     'ui/table_view/process_action_bar.blp',
     'ui/table_view/process_details_dialog.blp',

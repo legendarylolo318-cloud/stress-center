@@ -1,10 +1,11 @@
 [package]
-name = "missioncenter"
+name = "stress-center"
 version = "1.2.0"
 authors = [
     "Jan Luca <janluca.oster@proton.me>",
     "jojo2357",
     "Romeo Calota <mail@romeocalota.me>",
+    "Stress Center Contributors",
 ]
 edition = "2021"
 

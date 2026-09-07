@@ -1,6 +1,7 @@
 /* window.rs
  *
  * Copyright 2026 Mission Center Developers
+ * Copyright 2026 Stress Center Contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -299,6 +300,8 @@ mod imp {
         #[template_child]
         pub services_page: TemplateChild<crate::services_page::ServicesPage>,
         #[template_child]
+        pub stress_page: TemplateChild<crate::stress_page::StressPage>,
+        #[template_child]
         pub header_bar: TemplateChild<adw::HeaderBar>,
         #[template_child]
         pub header_stack: TemplateChild<gtk::Stack>,
@@ -357,6 +360,7 @@ mod imp {
                 apps_page: TemplateChild::default(),
                 services_stack_page: TemplateChild::default(),
                 services_page: TemplateChild::default(),
+                stress_page: TemplateChild::default(),
                 header_bar: TemplateChild::default(),
                 header_stack: TemplateChild::default(),
                 header_tabs: TemplateChild::default(),
@@ -444,6 +448,22 @@ mod imp {
                 self.obj().notify_apps_page_active();
 
                 self.services_page_active.set(true);
+                self.obj().notify_services_page_active();
+            } else if visible_child_name == "stress-page" {
+                if !self.performance_page_active.get()
+                    && !self.apps_page_active.get()
+                    && !self.services_page_active.get()
+                {
+                    return;
+                }
+
+                self.performance_page_active.set(false);
+                self.obj().notify_performance_page_active();
+
+                self.apps_page_active.set(false);
+                self.obj().notify_apps_page_active();
+
+                self.services_page_active.set(false);
                 self.obj().notify_services_page_active();
             }
 
@@ -759,6 +779,7 @@ mod imp {
             PerformancePage::ensure_type();
             AppsPage::ensure_type();
             ServicesPage::ensure_type();
+            crate::stress_page::StressPage::ensure_type();
 
             klass.bind_template();
         }
@@ -1160,6 +1181,8 @@ impl MissionCenterWindow {
             );
         }
 
+        imp.stress_page.set_static_information(&readings);
+
         imp.sidebar_stack.set_visible_child_name("content");
 
         // Give services its own readings so the apps and services idles can both
@@ -1246,6 +1269,7 @@ impl MissionCenterWindow {
         result &= this.performance_page.update_readings(readings);
         result &= this.apps_page.update_readings(readings);
         result &= this.update_services(readings);
+        result &= this.stress_page.update_readings(readings);
 
         this.last_refresh.set(Self::get_current_timestamp());
 
@@ -1290,6 +1314,7 @@ impl MissionCenterWindow {
         );
 
         result &= this.performance_page.update_animations(ticks);
+        result &= this.stress_page.update_animations(ticks);
 
         result
     }

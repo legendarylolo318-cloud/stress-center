@@ -15,6 +15,7 @@
         <file preprocess="xml-stripblanks">list-disable-all-symbolic.svg</file>
         <file preprocess="xml-stripblanks">list-drag-handle-symbolic.svg</file>
         <file preprocess="xml-stripblanks">list-enable-all-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">lightning-symbolic.svg</file>
         <file preprocess="xml-stripblanks">mount-point-symbolic.svg</file>
         <file preprocess="xml-stripblanks">nm-signal-00-symbolic.svg</file>
         <file preprocess="xml-stripblanks">nm-signal-25-symbolic.svg</file>
@@ -75,6 +76,8 @@
         <file preprocess="xml-stripblanks">ui/preferences/window.ui</file>
 
         <file preprocess="xml-stripblanks">ui/services_page/page.ui</file>
+
+        <file preprocess="xml-stripblanks">ui/stress_page/page.ui</file>
 
         <file preprocess="xml-stripblanks">ui/table_view/table_view.ui</file>
         <file preprocess="xml-stripblanks">ui/table_view/process_action_bar.ui</file>

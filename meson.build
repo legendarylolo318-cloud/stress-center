@@ -1,4 +1,4 @@
-project('missioncenter',
+project('stress-center',
         'rust', 'c',
           version: '1.2.0',
     meson_version: '>= 0.63.0',
@@ -14,6 +14,16 @@ if get_option('flatpak') == false
     proj_magpie = subproject('magpie', default_options: [
                                  'b_lto=' + get_option('b_lto').to_string(),
                              ])
+endif
+
+# stress-ng is a runtime-only dependency of the Stress page: it is invoked
+# via PATH when a test is started, not linked against. Not required to
+# configure or build; the Stress page shows an in-app message if it's
+# missing at runtime instead of crashing.
+stress_ng = find_program('stress-ng', required: false)
+if not stress_ng.found()
+    warning('stress-ng was not found. It is a runtime dependency of the Stress page ' +
+            '(see stress_page/) and must be installed for that page to work.')
 endif
 
 subdir('data')

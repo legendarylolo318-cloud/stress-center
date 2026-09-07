@@ -1,0 +1,285 @@
+/* ui/stress_page/page.blp
+ *
+ * Copyright 2026 Stress Center Contributors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+using Gtk 4.0;
+using Adw 1;
+
+template $StressPage : Box {
+  orientation: vertical;
+
+  ScrolledWindow {
+    hscrollbar-policy: never;
+    vexpand: true;
+
+    Box {
+      orientation: vertical;
+      spacing: 10;
+      margin-start: 10;
+      margin-end: 10;
+      margin-top: 10;
+      margin-bottom: 10;
+
+      Box {
+        spacing: 10;
+
+        Label {
+          styles [
+            "title-1",
+          ]
+
+          hexpand: true;
+          halign: start;
+          label: _("Stress");
+        }
+
+        Label status_label {
+          styles [
+            "dim-label",
+          ]
+
+          valign: center;
+        }
+
+        Button start_stop_button {
+          valign: center;
+
+          styles [
+            "suggested-action",
+          ]
+
+          label: _("Start");
+        }
+      }
+
+      Adw.Banner missing_binary_banner {
+        title: _("stress-ng was not found. Install it to use this page.");
+        revealed: false;
+      }
+
+      Adw.PreferencesGroup {
+        title: _("Test Configuration");
+
+        Adw.ComboRow test_type_row {
+          title: _("Test Type");
+
+          model: StringList {
+            strings [
+              _("CPU"),
+              _("Memory"),
+              _("CPU and Memory"),
+            ]
+          };
+
+          selected: 0;
+        }
+
+        Adw.SpinRow workers_row {
+          title: _("Workers");
+          subtitle: _("Number of stressor processes to run");
+
+          adjustment: Gtk.Adjustment {
+            lower: 1;
+            upper: 1024;
+            step-increment: 1;
+            page-increment: 8;
+            value: 1;
+          };
+
+          numeric: true;
+        }
+
+        Adw.SpinRow duration_row {
+          title: _("Duration");
+          subtitle: _("Seconds");
+
+          adjustment: Gtk.Adjustment {
+            lower: 1;
+            upper: 86400;
+            step-increment: 10;
+            page-increment: 60;
+            value: 60;
+          };
+
+          numeric: true;
+        }
+
+        Adw.ComboRow cpu_method_row {
+          title: _("CPU Method");
+          subtitle: _("Populated from `stress-ng --cpu-method which`");
+
+          model: StringList {
+            strings [
+              _("all"),
+            ]
+          };
+
+          selected: 0;
+        }
+
+        Adw.SwitchRow verify_row {
+          title: _("Verify");
+          subtitle: _("Ask stress-ng to verify computation results (--verify)");
+          active: true;
+        }
+      }
+
+      Grid graphs_grid {
+        row-spacing: 10;
+        column-spacing: 10;
+        row-homogeneous: true;
+        column-homogeneous: true;
+        height-request: 260;
+
+        Box {
+          orientation: vertical;
+          spacing: 4;
+
+          layout {
+            column: '0';
+            row: '0';
+          }
+
+          Label {
+            styles [
+              "caption",
+            ]
+
+            halign: start;
+            label: _("CPU Utilization");
+          }
+
+          $McGraphWidget graph_cpu {
+            vexpand: true;
+            hexpand: true;
+            scroll: true;
+          }
+        }
+
+        Box {
+          orientation: vertical;
+          spacing: 4;
+
+          layout {
+            column: '1';
+            row: '0';
+          }
+
+          Label {
+            styles [
+              "caption",
+            ]
+
+            halign: start;
+            label: _("Per-Core Utilization");
+          }
+
+          $McGraphWidget graph_cores {
+            vexpand: true;
+            hexpand: true;
+            scroll: true;
+          }
+        }
+
+        Box power_graph_box {
+          orientation: vertical;
+          spacing: 4;
+
+          layout {
+            column: '0';
+            row: '1';
+          }
+
+          Label {
+            styles [
+              "caption",
+            ]
+
+            halign: start;
+            label: _("Package Power");
+          }
+
+          $McGraphWidget graph_power {
+            vexpand: true;
+            hexpand: true;
+            scroll: true;
+          }
+        }
+
+        Box temp_graph_box {
+          orientation: vertical;
+          spacing: 4;
+
+          layout {
+            column: '1';
+            row: '1';
+          }
+
+          Label {
+            styles [
+              "caption",
+            ]
+
+            halign: start;
+            label: _("Temperature");
+          }
+
+          $McGraphWidget graph_temp {
+            vexpand: true;
+            hexpand: true;
+            scroll: true;
+          }
+        }
+      }
+
+      Label {
+        styles [
+          "caption",
+          "dim-label",
+        ]
+
+        halign: start;
+        label: _("Shaded regions mark the time the test was running");
+      }
+
+      ScrolledWindow log_scroller {
+        vexpand: true;
+        height-request: 160;
+
+        styles [
+          "card",
+        ]
+
+        TextView log_view {
+          styles [
+            "monospace",
+          ]
+
+          editable: false;
+          cursor-visible: false;
+          wrap-mode: word_char;
+          top-margin: 6;
+          bottom-margin: 6;
+          left-margin: 6;
+          right-margin: 6;
+        }
+      }
+    }
+  }
+}

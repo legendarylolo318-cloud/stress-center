@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Stress Center: a fork of Mission Center. Copyright 2026 Stress Center Contributors. -->
 <component type="desktop">
-    <id>io.missioncenter.MissionCenter</id>
-    <name>Mission Center</name>
-    <developer id="io.missioncenter">
-        <name>Mission Center Developers</name>
+    <id>io.stresscenter.StressCenter</id>
+    <name>Stress Center</name>
+    <developer id="io.stresscenter">
+        <name>Stress Center Contributors</name>
     </developer>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0-or-later</project_license>
 
-    <url type="homepage">https://missioncenter.io</url>
-    <url type="bugtracker">https://gitlab.com/mission-center-devs/mission-center/-/issues</url>
-    <url type="translate">https://hosted.weblate.org/projects/mission-center/mission-center</url>
-    <url type="vcs-browser">https://gitlab.com/mission-center-devs/mission-center/</url>
-    <url type="donation">https://opencollective.com/mission-center/</url>
+    <url type="bugtracker">https://github.com/legendarylolo318-cloud/stress-center/issues</url>
+    <url type="vcs-browser">https://github.com/legendarylolo318-cloud/stress-center</url>
 
-    <summary>Monitor system resource usage</summary>
+    <summary>Monitor system resources and stress test your CPU with stress-ng</summary>
     <description>
+        <p>Stress Center is a fork of Mission Center (https://gitlab.com/mission-center-devs/mission-center) that adds a built-in Stress page driven by stress-ng, on top of everything Mission Center already does.</p>
         <p>Monitor your CPU, Memory, Disk, Network and GPU usage, accompanied by a per app and process breakdown of these statistics</p>
         <p>Features:</p>
         <ul>
@@ -119,10 +118,15 @@
     </screenshots>
 
     <content_rating type="oars-1.1"/>
-    <translation type="gettext">missioncenter</translation>
-    <launchable type="desktop-id">io.missioncenter.MissionCenter.desktop</launchable>
+    <translation type="gettext">stresscenter</translation>
+    <launchable type="desktop-id">io.stresscenter.StressCenter.desktop</launchable>
 
     <releases>
+        <release version="1.2.0-stress.1" date="2026-09-07">
+            <description translate="no">
+                <p>Stress Center fork: added a built-in Stress page (stress-ng powered CPU/memory stress testing with live graphs and log output). See NOTICE.md for details.</p>
+            </description>
+        </release>
         <release version="1.2.0" date="2026-07-24">
             <description translate="no">
                 <p>Noteworthy changes:</p>

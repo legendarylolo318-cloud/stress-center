@@ -11,10 +11,10 @@ endif
 
 conf = configuration_data()
 conf.set_quoted('VERSION', version)
-conf.set_quoted('GETTEXT_PACKAGE', 'missioncenter')
+conf.set_quoted('GETTEXT_PACKAGE', 'stresscenter')
 conf.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set_quoted('PKGDATADIR', pkgdatadir)
-conf.set_quoted('APP_ID', 'io.missioncenter.MissionCenter')
+conf.set_quoted('APP_ID', 'io.stresscenter.StressCenter')
 
 configure_file(
     input: 'config.rs.in',

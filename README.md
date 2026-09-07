@@ -1,12 +1,36 @@
-<img align="left"  src="https://gitlab.com/mission-center-devs/mission-center/-/raw/main/data/icons/hicolor/scalable/apps/io.missioncenter.MissionCenter.svg" alt="drawing" width="64"/> 
+<img align="left" src="data/icons/hicolor/scalable/apps/io.stresscenter.StressCenter.svg" alt="Stress Center icon" width="64"/>
 
-# Mission Center
+# Stress Center
 
-Monitor your CPU, Memory, Disk, Network and GPU usage with [Mission Center](https://missioncenter.io/)
+**Stress Center is a fork of [Mission Center](https://gitlab.com/mission-center-devs/mission-center)**, the GTK4/libadwaita
+system monitor, with one addition: a built-in **Stress** page that drives
+[`stress-ng`](https://github.com/ColinIanKing/stress-ng) to load-test your CPU and memory while showing live
+utilization, per-core load, package power and temperature graphs. Everything else — the Performance, Apps and
+Services pages — is unmodified Mission Center. See [NOTICE.md](NOTICE.md) for the full, itemized list of changes.
+
+This is an independent fork, not affiliated with or endorsed by the Mission Center project.
 
 ![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0001-cpu.png)
 
-## Features
+## What's different from Mission Center
+
+* A new **Stress** tab alongside Performance/Apps/Services, added without modifying how those existing pages work.
+* Controls for test type (CPU / Memory / CPU and Memory), worker count (defaults to your core count), duration,
+  a CPU stress method picked from `stress-ng --cpu-method which`, and a `--verify` toggle (on by default).
+* stress-ng's stdout/stderr are streamed live into a log pane in the page, with `--verify` failures and other
+  errors highlighted in a distinct style so they're easy to spot.
+* The existing CPU/temperature/power graph widgets are reused to chart utilization, per-core load, package power
+  and temperature while a test runs, with the time range the test was active shaded on the graphs.
+* Stop reliably tears down the whole `stress-ng` process group (it forks many workers), including on app quit or
+  a crash — not just the direct child process.
+* `stress-ng` is invoked directly from this (unprivileged) UI process; nothing was added to, or routed through,
+  the `magpie` gatherer process.
+* Renamed application ID, binary and desktop file (`io.stresscenter.StressCenter` / `stress-center`) so it can be
+  installed alongside a real Mission Center without colliding.
+
+Full details, including exactly which files were touched and why, are in [NOTICE.md](NOTICE.md).
+
+## Everything Mission Center already does
 
 * Monitor overall or per-thread CPU usage
 * See system process, thread, and handle count, uptime, clock speed (base and current), cache sizes
@@ -14,120 +38,59 @@ Monitor your CPU, Memory, Disk, Network and GPU usage with [Mission Center](http
 * See a breakdown how the memory is being used by the system
 * Monitor Disk utilization and transfer rates
 * Monitor network utilization and transfer speeds
-* See network interface information such as network card name, connection type (Wi-Fi or Ethernet), wireless speeds and
-  frequency, hardware address, IP address
-* Monitor overall GPU usage, video encoder and decoder usage, memory usage and power consumption, powered by the popular
-  NVTOP project
+* See network interface information such as network card name, connection type (Wi-Fi or Ethernet), wireless speeds
+  and frequency, hardware address, IP address
+* Monitor overall GPU usage, video encoder and decoder usage, memory usage and power consumption, powered by the
+  popular NVTOP project
 * See a breakdown of resource usage by app and process
 * Supports a minified summary view for simple monitoring
-* Use hardware accelerated rendering for all the graphs in an effort to reduce CPU and overall resource usage
-* Uses GTK4 and Libadwaita
-* Written in Rust
+* Uses GTK4 and Libadwaita, written in Rust
 
-## Limitations
-
-Please note there is ongoing work to overcome all of these.
-
-* Per-process network monitoring requires manual setup,
-  see [this page](https://gitlab.com/mission-center-devs/mission-center/-/wikis/Home/Nethogs) for more information.
-* Intel GPU monitoring is only supported for Broadwell and later GPUs; and does not support VRAM, power, or temperature
-  monitoring.
-* When using Linux Mint/Cinnamon, launched applications may not show up in the "Applications" section. (Upstream
-  issue: https://github.com/linuxmint/cinnamon/issues/12015)
-
-Please also note that as Mission Center is a libadwaita application, it will not follow system-defined stylesheets
-(themes).
+For the full upstream feature list and background, see the
+[Mission Center README](https://gitlab.com/mission-center-devs/mission-center/-/blob/main/README.md).
 
 ## Installing
 
-[AppImage (x86_64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/15536631699/artifacts/raw/MissionCenter-1.2.0-x86_64.AppImage)  
-[AppImage (ARM64)](https://gitlab.com/mission-center-devs/mission-center/-/jobs/15536631700/artifacts/raw/MissionCenter-1.2.0-aarch64.AppImage)  
-[Flatpak](https://flathub.org/apps/io.missioncenter.MissionCenter)  
-[Snap](https://snapcraft.io/mission-center)
+There are no prebuilt packages for this fork yet — build it from source (below), or use the included `PKGBUILD` on
+Arch-based distributions:
 
-Also available from https://portable-linux-apps.github.io/apps/mission-center.html
+```bash
+makepkg -si
+```
 
-Might also be available in your distribution's repository:  
-[![](https://repology.org/badge/vertical-allrepos/mission-center.svg)](https://repology.org/project/mission-center/versions)
-
-Installed by default in:
-
-* [Aurora](https://getaurora.dev/)
-* [Bazzite](https://bazzite.gg)
-* [Bluefin](https://projectbluefin.io/)
-* [DeLinuxCo](https://www.delinuxco.com/)
-
-Source code is available at [GitLab](https://gitlab.com/mission-center-devs/mission-center)
-
-## Screenshots
-
-<details>
-  <summary><b>Show</b></summary>
-
-  <br/>
-
-*CPU view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0001-cpu.png)
-
-*Memory view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0002-memory.png)
-
-*Disk view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0003-disk.png)
-
-*Ethernet and Wi-Fi view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0004-ethernet.png)
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0005-wifi.png)
-
-*GPU view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0006-gpu.png)
-
-*Fan view*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0007-fan.png)
-
-*Apps page*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0008-apps.png)
-
-*Services page*
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0008-services.png)
-
-*Dark mode*  
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0009-cpu-dark.png)
-![](https://gitlab.com/mission-center-devs/mission-center/-/raw/main/screenshots/0010-disk-dark.png)
-
-  </details>
+If you just want Mission Center itself (not the stress-testing addition), see its
+[own install options](https://gitlab.com/mission-center-devs/mission-center#installing).
 
 ## Building and running
 
-### Building - Native
+Requirements are the same as upstream Mission Center, plus `stress-ng` at runtime for the Stress page (it's a
+runtime dependency, not a build dependency — `meson setup` will warn, not fail, if it's missing).
 
 **Requirements:**
 
-| Dependency                   | Comment                    | Minimum Version |
-|------------------------------|----------------------------|----------------:|
-| Meson                        |                            |           1.0.2 |
-| Rust                         |                            |            1.90 |
-| CMake                        |                            |            3.15 |
-| Python3                      |                            |            3.10 |
-| Python GObject Introspection | Used by Blueprint Compiler |             N/A |
-| DRM development libraries    |                            |             N/A |
-| GBM development libraries    |                            |             N/A |
-| udev development libraries   |                            |             N/A |
-| GTK 4                        |                            |            4.22 |
-| libadwaita                   |                            |             1.9 |
+| Dependency                   | Comment                          | Minimum Version |
+|-------------------------------|----------------------------------|----------------:|
+| Meson                         |                                   |           1.0.2 |
+| Rust                          |                                   |            1.90 |
+| CMake                         |                                   |            3.15 |
+| Python3                       |                                   |            3.10 |
+| Python GObject Introspection  | Used by Blueprint Compiler       |             N/A |
+| DRM development libraries     |                                   |             N/A |
+| GBM development libraries     |                                   |             N/A |
+| udev development libraries    |                                   |             N/A |
+| GTK 4                         |                                   |            4.22 |
+| libadwaita                    |                                   |             1.9 |
+| stress-ng                     | Runtime only, for the Stress page|             N/A |
 
 **Build instructions**
 
-Note: A native build requires, at least, GTK 4.22 and libadwaita 1.9. That means ArchLinux >= 20260501, Fedora >= 44,
-Ubuntu >= 26.04.
-
 ```bash
-# Avoid using "--depth=1" flag as it will not include the submodules which will result in failed build
-git clone https://gitlab.com/mission-center-devs/mission-center --recursive
-cd mission-center
+# Avoid using "--depth=1" as it will not include submodules and the build will fail
+git clone https://github.com/legendarylolo318-cloud/stress-center --recursive
+cd stress-center
 
-# On Ubuntu 26.04 all dependencies, except for the Rust toolchain, can be installed with:
-sudo apt install build-essential cmake curl desktop-file-utils gettext git libadwaita-1-dev libdbus-1-dev libdrm-dev libgbm-dev libudev-dev meson pkg-config protobuf-compiler python3-gi python3-pip
+# On Ubuntu 26.04 all dependencies, except for the Rust toolchain and stress-ng, can be installed with:
+sudo apt install build-essential cmake curl desktop-file-utils gettext git libadwaita-1-dev libdbus-1-dev libdrm-dev libgbm-dev libudev-dev meson pkg-config protobuf-compiler python3-gi python3-pip stress-ng
 
 BUILD_ROOT="$(pwd)/build-meson-debug"
 
@@ -149,125 +112,41 @@ glib-compile-schemas --strict "$(pwd)/data" && mv "$(pwd)/data/gschemas.compiled
 And then to run the app:
 
 ```bash
-"$BUILD_ROOT/src/missioncenter"
+"$BUILD_ROOT/src/stress-center"
 ```
 
 If you want to install the app just run:
 
 ```bash
-ninja -C $BUILD_ROOT install
+ninja -C "$BUILD_ROOT" install
 ```
 
 And run the app from your launcher or from the command-line:
 
 ```bash
-missioncenter
+stress-center
 ```
 
-### Building - AppImage
+Flatpak, Snap and AppImage packaging from upstream are present in this fork's tree but are **not maintained here**
+and are not expected to build correctly — this fork only targets native/PKGBUILD builds.
 
-**Note:** Creating a fully distro-agnostic AppImage requires an running the `support/create-appimage.sh` script in an
-ArchLinux container. The process described here is just informative.
+## Rebasing on upstream
 
-```bash
-# On Ubuntu 26.04 all dependencies, except for the Rust toolchain, can be installed with:
-sudo apt install build-essential cmake curl desktop-file-utils gettext git libadwaita-1-dev libdbus-1-dev libdrm-dev libgbm-dev libudev-dev meson pkg-config protobuf-compiler python3-gi python3-pip
+This fork is intentionally structured to keep the diff against upstream Mission Center small: the Stress page lives
+entirely in new files (`src/stress_page/`, `resources/ui/stress_page/`), and existing files are touched only at the
+minimal points needed to register the new page and rename the app's identity. See NOTICE.md for the exact list.
 
-meson setup _build -Dbuildtype=debug # Alternatively pass `-Dbuildtype=release` for a release build
-ninja -C _build
-```
+## Contributing / Issues
 
-And then build the AppImage:
-
-```bash
-meson install -C _build --no-rebuild --destdir "AppDir"
-
-appimage-builder --appdir _build/AppDir/ 
-```
-
-And run the app from the command-line:
-
-```bash
-./"Mission Center-${version}-${arch}.AppImage"
-```
-
-### Building - Flatpak
-
-**Requirements:**
-
-* Flatpak
-* Flatpak-Builder
-
-Add the `flathub` repo is not already present:
-
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
-
-Install the required Flatpak runtimes and SDKs:
-
-```bash
-flatpak install -y \
-    org.freedesktop.Platform//25.08 \
-    org.freedesktop.Sdk//25.08 \
-    org.gnome.Platform//50 \
-    org.gnome.Sdk//50
-```
-
-Finally build a Flatpak package:
-
-```bash
-cd flatpak
-flatpak-builder --repo=repo --ccache --force-clean build io.missioncenter.MissionCenter.json
-flatpak build-bundle repo missioncenter.flatpak io.missioncenter.MissionCenter
-```
-
-Install the package:
-
-```bash
-flatpak uninstall -y io.missioncenter.MissionCenter
-flatpak install -y missioncenter.flatpak
-```
-
-Run the app from your launcher or from the command-line:
-
-```bash
-flatpak run io.missioncenter.MissionCenter
-```
-
-## Contributing
-
-### Issues
-
-Report issues to GitLab [issue tracking system](https://gitlab.com/mission-center-devs/mission-center/-/issues).
-
-### Discord
-
-Join [the Discord server](https://discord.gg/RG7QTeB9yk) and let's talk about what you think is missing or can be
-improved.
+Issues and contributions for the Stress page addition are welcome via this repository's
+[issue tracker](https://github.com/legendarylolo318-cloud/stress-center/issues). For anything about Mission Center
+itself (unrelated to the Stress page), please use the
+[upstream issue tracker](https://gitlab.com/mission-center-devs/mission-center/-/issues) instead.
 
 ### Translations
 
-If you'd like to help translating Mission Center into your language, please head over
-to [Weblate](https://hosted.weblate.org/engage/mission-center/).
-
-<a href="https://hosted.weblate.org/engage/mission-center/">
-  <img src="https://hosted.weblate.org/widgets/mission-center/-/mission-center/multi-auto.svg" alt="Translation status" />
-</a>
-
-### Monetary Contributions
-
-Instead of donating to Mission Center directly, consider supporting the projects that Mission Center depends on:
-
-* [GNOME](https://donate.gnome.org/)
-* [NNG](https://github.com/gdamore)
-* [NVTOP](https://github.com/Syllo/nvtop)
-* [Rust Foundation](https://rustfoundation.org/get-involved/)
-
-If you'd, still, like to support the development of Mission Center financially, please visit
-our [Open Collective page](https://opencollective.com/mission-center).
-
-Comments, suggestions, bug reports and contributions are welcome.
+Translations are inherited from upstream Mission Center's `.po` files and have not been updated for the new Stress
+page strings. Contributions to translate the new strings are welcome.
 
 ## License
 
@@ -275,9 +154,11 @@ This program is free software; you can redistribute it and/or modify it under th
 License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later
 version.
 
-Please see COPYING file in the root of this repository for the complete license text. Alternatively see
-[the official license](https://www.gnu.org/licenses/gpl-3.0.html) as written by the Free Software Foundation.
+Please see the [COPYING](COPYING) file in the root of this repository for the complete license text (unchanged from
+upstream). Alternatively see [the official license](https://www.gnu.org/licenses/gpl-3.0.html) as written by the
+Free Software Foundation.
 
 ## Code of Conduct
 
-Mission Center follows the GNOME Code of Conduct. All communications in project spaces are expected to follow it.
+This fork follows the GNOME Code of Conduct, same as upstream Mission Center. All communications in project spaces
+are expected to follow it.

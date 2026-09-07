@@ -1,6 +1,6 @@
 # https://gitlab.gnome.org/World/Health/-/blob/master/po/meson.build
 i18n.gettext(
-    'missioncenter',
+    'stresscenter',
     args: [
         '--keyword=i18n',
         '--keyword=i18n_f',
